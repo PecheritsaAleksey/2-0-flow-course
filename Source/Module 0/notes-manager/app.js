@@ -8,28 +8,6 @@ const rl = readline.createInterface({
 const userName = "Алексей";
 console.log(`${userName}, добро пожаловать в Консольный Менеджер Заметок!`);
 
-let userInput;
-
-// rl.question("Введите число: ", (input) => {
-//   userInput = input;
-//   console.log(`Ваше число: ${userInput}`);
-//   rl.question("Введите второе число: ", (input) => {
-//     userInput += input;
-//     console.log(`Ваше число: ${userInput}`);
-//     rl.close();
-//   });
-// });
-
-// rl.question("Введите число: ", (input) => {
-//   userInput = +input;
-//   console.log(`Ваше число: ${userInput}`);
-//   rl.question("Введите второе число: ", (input) => {
-//     userInput += input;
-//     console.log(`Ваше число: ${userInput}`);
-//     rl.close();
-//   });
-// });
-
 console.log("\nВыберите действие:");
 console.log("1. Добавить заметку");
 console.log("2. Просмотреть все заметки");
@@ -39,8 +17,47 @@ console.log("5. Редактировать заметку");
 console.log("6. Поиск заметок");
 console.log("0. Выход");
 
+// rl.question("Введите число: ", (input) => {
+//   if (input === "1") {
+//     console.log("Добавление заметки...");
+//   } else {
+//     console.log("Что-то другое...");
+//   }
+
+//   if (input === "2") {
+//     console.log("Просмотреть все заметки...");
+//   }
+
+//   if (input === "3") {
+//     console.log();
+//   }
+
+//   rl.close();
+// });
+
 rl.question("Введите число: ", (input) => {
-  userInput = +input;
-  console.log(`Вы выбрали действие: ${userInput}`);
+  switch (input) {
+    case "1":
+      console.log("Добавление заметки...");
+      break;
+    case "2":
+      console.log("Просмотреть все заметки...");
+      break;
+    case "3":
+      console.log("Прочитать заметку...");
+      break;
+    case "4":
+      console.log("Удалить заметку...");
+      break;
+    case "5":
+      console.log("Редактировать заметку...");
+      break;
+    case "6":
+      console.log("Поиск заметок...");
+      break;
+    case "0":
+      console.log("Выход...");
+  }
+
   rl.close();
 });
