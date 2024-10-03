@@ -1,8 +1,21 @@
-const multiply = (x) => {
-  return x * 2;
-};
+rl.question("Введите ваше имя: ", (name) => {
+  console.log(`Привет, ${name}!`);
+});
 
-let multiply4 = multiply(4);
+console.log("А потом вот это!");
 
-console.log(multiply4);
+function getInput(question) {
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => {
+      resolve(answer);
+    });
+  });
+}
 
+async function asyncFunction() {
+  const name = await getInput("Введите ваше имя: ");
+  console.log(`Привет, ${name}!`);
+  console.log("А потом вот это!");
+}
+
+asyncFunction();
