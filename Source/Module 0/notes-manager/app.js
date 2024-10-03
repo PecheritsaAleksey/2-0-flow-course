@@ -18,6 +18,8 @@ console.log("5. Редактировать заметку");
 console.log("6. Поиск заметок");
 console.log("0. Выход");
 
+let exit = false;
+
 rl.question("Выберите действие: ", (input) => {
   switch (input) {
     case "1":
@@ -32,7 +34,9 @@ rl.question("Выберите действие: ", (input) => {
       });
       break;
     case "2":
-      console.log("Просмотреть все заметки...");
+      for (let note of notes) {
+        console.log(note.title);
+      }
       break;
     case "3":
       console.log("Прочитать заметку...");
