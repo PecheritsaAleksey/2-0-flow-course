@@ -1,26 +1,18 @@
-const object1 = new Object();
-const object2 = {
-  userName: "Alex",
-};
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
 
-object1.userName = "John";
-object1.age = 25;
-console.log(object1);
-console.log(object2);
+let array = [1, 2, 3, 4, 5];
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
 
+for (const el of array) {
+  console.log(el);
+}
 
-
-const array1 = new Array();
-const array2 = [];
-const array3 = [1, 2, 3, "четыре"];
-console.log(array3);
-
-console.log(array3[1]);
-
-array2.push(5);
-console.log(array2);
-
-array2.push(7);
-
-const indexOf7 = array2.indexOf(7);
-console.log(indexOf7);
+let j = 10;
+while (j > 0) {
+  console.log(j);
+  j--;
+}
