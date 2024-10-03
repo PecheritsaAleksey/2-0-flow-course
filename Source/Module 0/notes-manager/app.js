@@ -5,6 +5,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+const notes = [];
 const userName = "Алексей";
 console.log(`${userName}, добро пожаловать в Консольный Менеджер Заметок!`);
 
@@ -17,28 +18,18 @@ console.log("5. Редактировать заметку");
 console.log("6. Поиск заметок");
 console.log("0. Выход");
 
-// rl.question("Введите число: ", (input) => {
-//   if (input === "1") {
-//     console.log("Добавление заметки...");
-//   } else {
-//     console.log("Что-то другое...");
-//   }
-
-//   if (input === "2") {
-//     console.log("Просмотреть все заметки...");
-//   }
-
-//   if (input === "3") {
-//     console.log();
-//   }
-
-//   rl.close();
-// });
-
-rl.question("Введите число: ", (input) => {
+rl.question("Выберите действие: ", (input) => {
   switch (input) {
     case "1":
-      console.log("Добавление заметки...");
+      const newNote = {};
+      rl.question("Введите название заметки: ", (title) => {
+        newNote.title = title;
+        rl.question("Введите содержание заметки: ", (content) => {
+          newNote.content = content;
+          notes.push(newNote);
+          console.log("Заметка добавлена!");
+        });
+      });
       break;
     case "2":
       console.log("Просмотреть все заметки...");
@@ -58,6 +49,4 @@ rl.question("Введите число: ", (input) => {
     case "0":
       console.log("Выход...");
   }
-
-  rl.close();
 });
