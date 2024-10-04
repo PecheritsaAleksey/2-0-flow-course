@@ -1,5 +1,12 @@
 const { getInput, rl } = require("./utils.js");
-const { addNote, viewNotes } = require("./notes.js");
+const {
+  addNote,
+  viewNotes,
+  readNote,
+  editNote,
+  deleteNote,
+  searchNotes,
+} = require("./notes.js");
 
 const userName = "Алексей";
 console.log(`${userName}, добро пожаловать в Консольный Менеджер Заметок!`);
@@ -30,16 +37,20 @@ async function showMenu() {
       showMenu();
       break;
     case "3":
-      console.log("Прочитать заметку...");
+      readNote();
+      showMenu();
       break;
     case "4":
-      console.log("Удалить заметку...");
+      deleteNote();
+      showMenu();
       break;
     case "5":
-      console.log("Редактировать заметку...");
+      editNote();
+      showMenu();
       break;
     case "6":
-      console.log("Поиск заметок...");
+      searchNotes();
+      showMenu();
       break;
     case "0":
       rl.close();
