@@ -1,4 +1,4 @@
-const notes = [];
+let notes = [];
 
 function addNote(title, content) {
   notes.push({ title, content });
@@ -37,7 +37,6 @@ function editNote(title, newContent) {
 function deleteNote(title) {
   const notesToKeep = notes.filter((note) => note.title !== title);
   notes = notesToKeep;
-  saveNotes();
   console.log("Заметка удалена.");
 }
 

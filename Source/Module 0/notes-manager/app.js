@@ -37,19 +37,30 @@ async function showMenu() {
       showMenu();
       break;
     case "3":
-      readNote();
+      const titleToRead = await getInput(
+        "Введите заголовок заметки для чтения: "
+      );
+      readNote(titleToRead);
       showMenu();
       break;
     case "4":
-      deleteNote();
+      const titleToDelete = await getInput(
+        "Введите заголовок заметки для удаления: "
+      );
+      deleteNote(titleToDelete);
       showMenu();
       break;
     case "5":
-      editNote();
+      const titleToEdit = await getInput(
+        "Введите заголовок заметки для редактирования: "
+      );
+      const contentToEdit = await getInput("Введите текст заметки: ");
+      editNote(titleToEdit, contentToEdit);
       showMenu();
       break;
     case "6":
-      searchNotes();
+      const textToSearch = await getInput("Введите текст для поиска: ");
+      searchNotes(textToSearch);
       showMenu();
       break;
     case "0":
